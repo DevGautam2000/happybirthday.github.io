@@ -56,7 +56,6 @@ button.addEventListener("click", () => {
         whiteSpaceIndex = promp.length;
       }
 
-      console.log(whiteSpaceIndex);
       sub = promp.substring(1, whiteSpaceIndex);
 
       text.innerHTML = `Happy Birthday ${
