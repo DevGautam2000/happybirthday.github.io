@@ -38,6 +38,9 @@ button.addEventListener("click", () => {
       text.innerHTML =
         "Have a Great Day!<br>May your dreams come true.<br><br><div class='note'>~Your loving friend</div>";
     }
+
+    let whiteSpaceIndex = promp.indexOf(" ");
+
     if (count === 0) {
       count++;
 
@@ -45,7 +48,11 @@ button.addEventListener("click", () => {
       circleDown.classList.add("down");
       html.classList.add("Clicked");
       button.innerHTML = "Stop Audio";
-      text.innerHTML = `Happy Birthday ${promp}`;
+      let first = promp.substr(0, 1);
+      let sub = promp.substring(1, whiteSpaceIndex);
+      text.innerHTML = `Happy Birthday ${
+        first.toUpperCase() + sub.toLowerCase()
+      }`;
       let promise = audio.play();
 
       audioTimer = setInterval(() => {
