@@ -49,7 +49,16 @@ button.addEventListener("click", () => {
       html.classList.add("Clicked");
       button.innerHTML = "Stop Audio";
       let first = promp.substr(0, 1);
-      let sub = promp.substring(1, whiteSpaceIndex);
+      let sub;
+      if (whiteSpaceIndex !== -1) {
+        sub = promp.substring(1, whiteSpaceIndex);
+      } else {
+        whiteSpaceIndex = promp.length;
+      }
+
+      console.log(whiteSpaceIndex);
+      sub = promp.substring(1, whiteSpaceIndex);
+
       text.innerHTML = `Happy Birthday ${
         first.toUpperCase() + sub.toLowerCase()
       }`;

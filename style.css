@@ -22,7 +22,6 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  height: 100vh;
 }
 
 html.Clicked {
@@ -33,8 +32,6 @@ html.Clicked {
 html {
   background-color: var(--primary-color--);
   transition: all 1.5s ease;
-  height: 100vh;
-  width: 100vw;
 }
 
 .container {
@@ -127,14 +124,6 @@ html {
 /* media queries here */
 
 @media only screen and (max-width: 750px) {
-  body {
-    height: 100vh;
-    width: 100vw;
-  }
-  html {
-    height: 100vh;
-    width: 100vw;
-  }
   .circleUp {
     height: 300px;
     width: 300px;
