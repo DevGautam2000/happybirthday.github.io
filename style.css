@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap");
+
+:root {
+  --primary-color--: rgb(252, 195, 8);
+  --sec-color--: rgb(252, 195, 8);
+  --text-color--: rgb(252, 195, 8);
+  --border--: rgb(255, 135, 56);
+  --circleUpFill--: linear-gradient(90deg, rgb(221, 32, 32), rgb(67, 79, 252));
+  --circleDownFill--: linear-gradient(
+    90deg,
+    rgb(67, 79, 252),
+    rgb(221, 32, 32)
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+html.Clicked {
+  --primary-color--: rgb(255, 255, 255);
+  --text-color--: rgb(252, 118, 8);
+}
+
+html {
+  background-color: var(--primary-color--);
+  transition: all 1.5s ease;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  top: 40vh;
+  text-align: center;
+}
+
+.btn {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 1s ease-out;
+  font-weight: bold;
+  border: 0;
+  box-shadow: 2px 2px 10px 2px var(--border--);
+}
+
+.btn.gone {
+  width: 0;
+  height: 0;
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.circleUp {
+  position: absolute;
+  height: 700px;
+  width: 700px;
+  top: -350px;
+  right: -350px;
+  border-radius: 50%;
+  background: var(--circleUpFill--);
+  transform: translate(500px);
+  box-shadow: 5px 5px 30px 8px var(--sec-color--);
+  transition: transform 1s ease-in;
+}
+
+.circleDown {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  bottom: -250px;
+  left: -250px;
+  border-radius: 50%;
+  background: var(--circleDownFill--);
+  box-shadow: 5px 5px 30px 8px var(--sec-color--);
+  transform: translate(-500px);
+  transition: transform 1s ease-in;
+}
+
+.circleUp.down {
+  transform: translate(0);
+}
+
+.circleDown.down {
+  transform: translate(0);
+}
+
+.text {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--text-color--);
+  transition: color 2s ease;
+}
+
+.note {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* media queries here */
+@media screen and (max-width: 750px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+  html {
+    height: 100vh;
+    width: 100vw;
+  }
+  .circleUp {
+    height: 300px;
+    width: 300px;
+    top: -150px;
+    right: -150px;
+  }
+
+  .circleDown {
+    height: 200px;
+    width: 200px;
+    bottom: -100px;
+    left: -100px;
+  }
+
+  .btn {
+    height: 80px;
+    width: 80px;
+    font-size: 10px;
+  }
+
+  .text {
+    font-size: 30px;
+  }
+
+  .note {
+    font-size: 15px;
+  }
+}
